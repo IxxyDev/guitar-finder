@@ -1,0 +1,20 @@
+/* Стили для логотипа гитары */
+.logo-container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  position: relative;
+  border-radius: 50%;
+  background-color: #e63946; /* Красный цвет фона как на логотипе */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.guitar-icon {
+  width: 70%;
+  height: 70%;
+  fill: #222; /* Черный цвет гитары */
+}
