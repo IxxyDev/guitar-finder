@@ -17,7 +17,7 @@ function guitarApp() {
 
         init() {
             this.loadData();
-            this.githubRepo = 'YOUR_USERNAME/guitar-scraper'; // Замените на ваш репозиторий
+            this.githubRepo = 'ixxydev.github.io/guitar-finder';
         },
 
         runScraper(source) {
