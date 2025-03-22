@@ -12,41 +12,147 @@ function guitarApp() {
         isScrapingBuyee: false,
         showNotification: false,
         notificationMessage: '',
+        githubRepo: '',
+        githubToken: '',
 
         init() {
             this.loadData();
+            this.githubRepo = 'YOUR_USERNAME/guitar-scraper'; // Замените на ваш репозиторий
         },
 
         runScraper(source) {
-            if (source === 'reverb') {
-                this.isScrapingReverb = true;
-            } else if (source === 'buyee') {
-                this.isScrapingBuyee = true;
+            if (!this.githubRepo) {
+                this.showScraperNotification(`Необходимо настроить имя репозитория в файле app.js`);
+                return;
             }
 
-            const endpoint = `/api/run-scraper?source=${source}`;
+            if (source === 'reverb') {
+                this.isScrapingReverb = true;
+                this.triggerGitHubWorkflow('scrape-reverb.yml', 'Reverb');
+            } else if (source === 'buyee') {
+                this.isScrapingBuyee = true;
+                this.triggerGitHubWorkflow('scrape-buyee.yml', 'Buyee');
+            }
+        },
 
-            fetch(endpoint)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Ошибка HTTP: ${response.status}`);
-                    }
-                    return response.json();
+        triggerGitHubWorkflow(workflow, sourceName) {
+            this.showScraperNotification(`Запуск обновления данных из ${sourceName} в GitHub...`);
+
+            if (this.githubToken) {
+                // Если у нас есть токен, запускаем workflow через API GitHub
+                fetch(`https://api.github.com/repos/${this.githubRepo}/actions/workflows/${workflow}/dispatches`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `token ${this.githubToken}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ ref: 'main' })
                 })
-                .then(data => {
-                    this.showScraperNotification(`Данные из ${source} успешно обновлены!`);
-                    this.loadData();
+                .then(response => {
+                    if (response.status === 204) {
+                        this.checkWorkflowStatus(workflow, sourceName);
+                    } else {
+                        throw new Error(`HTTP статус: ${response.status}`);
+                    }
                 })
                 .catch(error => {
-                    this.showScraperNotification(`Ошибка обновления данных из ${source}: ${error.message}`);
-                })
-                .finally(() => {
-                    if (source === 'reverb') {
-                        this.isScrapingReverb = false;
-                    } else if (source === 'buyee') {
-                        this.isScrapingBuyee = false;
-                    }
+                    this.showScraperNotification(`Ошибка запуска обновления данных: ${error.message}`);
+                    if (sourceName === 'Reverb') this.isScrapingReverb = false;
+                    if (sourceName === 'Buyee') this.isScrapingBuyee = false;
                 });
+            } else {
+                // Если токена нет, показываем инструкцию для ручного запуска
+                window.open(`https://github.com/${this.githubRepo}/actions/workflows/${workflow}`, '_blank');
+
+                this.pollForChanges(sourceName);
+
+                this.showScraperNotification(`Для запуска обновления данных, нажмите на кнопку "Run workflow" на открывшейся странице GitHub Actions. После запуска вернитесь на эту страницу.`);
+            }
+        },
+
+        checkWorkflowStatus(workflow, sourceName) {
+            this.showScraperNotification(`Обновление данных из ${sourceName} запущено. Проверка статуса...`);
+
+            const checkInterval = setInterval(() => {
+                fetch(`https://api.github.com/repos/${this.githubRepo}/actions/workflows/${workflow}/runs?status=completed&per_page=1`, {
+                    headers: {
+                        'Authorization': `token ${this.githubToken}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.workflow_runs && data.workflow_runs.length > 0) {
+                        const latestRun = data.workflow_runs[0];
+                        const conclusion = latestRun.conclusion;
+
+                        if (conclusion === 'success') {
+                            this.showScraperNotification(`Данные из ${sourceName} успешно обновлены!`);
+                            this.loadData();
+                            clearInterval(checkInterval);
+                            if (sourceName === 'Reverb') this.isScrapingReverb = false;
+                            if (sourceName === 'Buyee') this.isScrapingBuyee = false;
+                        } else if (conclusion === 'failure') {
+                            this.showScraperNotification(`Ошибка при обновлении данных из ${sourceName}.`);
+                            clearInterval(checkInterval);
+                            if (sourceName === 'Reverb') this.isScrapingReverb = false;
+                            if (sourceName === 'Buyee') this.isScrapingBuyee = false;
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка при проверке статуса workflow:', error);
+                });
+            }, 10000);
+
+            setTimeout(() => {
+                clearInterval(checkInterval);
+                if ((sourceName === 'Reverb' && this.isScrapingReverb) ||
+                    (sourceName === 'Buyee' && this.isScrapingBuyee)) {
+                    this.showScraperNotification(`Превышен таймаут проверки статуса. Пожалуйста, проверьте статус обновления данных на GitHub Actions.`);
+                    if (sourceName === 'Reverb') this.isScrapingReverb = false;
+                    if (sourceName === 'Buyee') this.isScrapingBuyee = false;
+                }
+            }, 300000); // 5 минут таймаут
+        },
+
+        pollForChanges(sourceName) {
+            const checkFile = sourceName.toLowerCase() === 'reverb' ? 'reverb_time.json' : 'buyee_time.json';
+            const startTime = new Date();
+
+            const fetchCurrentData = () => {
+                return fetch(`data/${checkFile}?_=${Date.now()}`)
+                    .then(response => {
+                        if (!response.ok) return null;
+                        return response.json();
+                    })
+                    .catch(() => null);
+            };
+
+            fetchCurrentData().then(initialData => {
+                const initialTimestamp = initialData ? initialData.last_updated : null;
+
+                const checkInterval = setInterval(() => {
+                    fetchCurrentData().then(newData => {
+                        if (newData && newData.last_updated !== initialTimestamp) {
+                            this.showScraperNotification(`Данные из ${sourceName} успешно обновлены! Найдено ${newData.count} гитар.`);
+                            this.loadData();
+                            clearInterval(checkInterval);
+                            if (sourceName === 'Reverb') this.isScrapingReverb = false;
+                            if (sourceName === 'Buyee') this.isScrapingBuyee = false;
+                        }
+
+                        // Проверяем таймаут (15 минут)
+                        if (new Date() - startTime > 15 * 60 * 1000) {
+                            this.showScraperNotification(`Превышен таймаут ожидания обновления данных из ${sourceName}.`);
+                            clearInterval(checkInterval);
+                            if (sourceName === 'Reverb') this.isScrapingReverb = false;
+                            if (sourceName === 'Buyee') this.isScrapingBuyee = false;
+                        }
+                    });
+                }, 30000); // Проверка каждые 30 секунд
+            });
         },
 
         showScraperNotification(message) {
