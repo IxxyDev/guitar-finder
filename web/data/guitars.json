@@ -1,5 +1,206 @@
 {
-  "guitars": [],
-  "last_updated": "2025-06-15 12:02:33",
-  "total_count": 0
+  "guitars": [
+    {
+      "title": "Fender Select Stratocaster USA エレキギター 弦楽器 フェンダー セレクト ストラトキャスター 中古 C10057505",
+      "price": "213,840 иена(иен) (US$1 556,76)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/o1188915820",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "17.06.2025 22:40",
+      "timeRemaining": "Осталось: 1 дн. 22 ч. 37 мин."
+    },
+    {
+      "title": "Ibanez SA260FM BBS エレキギター アイバニーズ イバニーズ ブラックベリーサンバースト 楽器 中古 K10043593",
+      "price": "14,443 иена(иен) (US$105,15)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/j1188910268",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "17.06.2025 22:07",
+      "timeRemaining": "Осталось: 1 дн. 22 ч. 3 мин."
+    },
+    {
+      "title": "Mosrite モズライト california The Ventures Model ベンチャーズモデル エレキ ギター 楽器 中古 F10078831",
+      "price": "64,152 иена(иен) (US$467,03)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/v1188521612",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "16.06.2025 22:07",
+      "timeRemaining": "Осталось: 22 ч. 4 мин."
+    },
+    {
+      "title": "Epiphone Casino CH エレアコ ギター 弦楽器 ソフトケース付き エピフォン 中古 O10098273",
+      "price": "52,140 иена(иен) (US$379,58)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/j1188790352",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "16.06.2025 22:16",
+      "timeRemaining": "Осталось: 22 ч. 12 мин."
+    },
+    {
+      "title": "fender Stratocaster JD シリアル 2013年製 フェンダー エレキギター ストラトキャスター 中古 良好 T10069592",
+      "price": "64,350 иена(иен) (US$468,47)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/g1188049050",
+      "source": "buyee",
+      "condition": "Нет видимых повреждений/грязи",
+      "endDate": "16.06.2025 22:23",
+      "timeRemaining": "Осталось: 22 ч. 19 мин."
+    },
+    {
+      "title": "GRECO WS-STD SBL/R SUPREME SOUND BUSTER ストラト ギター 弦楽器 中古 T10067280",
+      "price": "16,500 иена(иен) (US$120,12)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/o1188242707",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "16.06.2025 22:15",
+      "timeRemaining": "Осталось: 22 ч. 11 мин."
+    },
+    {
+      "title": "Kanade SOUND DESIGN KTL-AS エレキギター 動作確認済み ギグバック付き ▼G4812",
+      "price": "165,000 иена(иен) (US$1 201,20)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/o1177638095",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "18.06.2025 04:38",
+      "timeRemaining": "Осталось: 2 дн. 4 ч. 34 мин."
+    },
+    {
+      "title": "Mosrite モズライト MARK-I VM-1965 MODEL エレキギター 弦楽器 中古 M9913322",
+      "price": "98,010 иена(иен) (US$713,52)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/e1188629015",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "17.06.2025 22:26",
+      "timeRemaining": "Осталось: 1 дн. 22 ч. 22 мин."
+    },
+    {
+      "title": "FERNANDES JG-55 エレキギター 弦楽器 フェルナンデス 中古 Y10087195",
+      "price": "22,000 иена(иен) (US$160,16)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/x1188224468",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "16.06.2025 22:53",
+      "timeRemaining": "Осталось: 22 ч. 49 мин."
+    },
+    {
+      "title": "Fender American Standard Stratocaster 3Color Sunburst Rosewood Fingerboard フェンダー アメリカンスタンダード 中古 良好T10066108",
+      "price": "154,000 иена(иен) (US$1 121,12)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/n1188552430",
+      "source": "buyee",
+      "condition": "Нет видимых повреждений/грязи",
+      "endDate": "16.06.2025 22:18",
+      "timeRemaining": "Осталось: 22 ч. 14 мин."
+    },
+    {
+      "title": "CARVIN カービン AE-185 エレキギター ハードケース付 ※ジャンク《A6782",
+      "price": "19,250 иена(иен) (US$140,14)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/b1188903587",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "18.06.2025 22:47",
+      "timeRemaining": "Осталось: 2 дн. 22 ч. 43 мин."
+    },
+    {
+      "title": "Reverend レヴェレンド Charger HB エレキギター 中古 W10039615",
+      "price": "50,512 иена(иен) (US$367,73)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/v1187766710",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "16.06.2025 22:40",
+      "timeRemaining": "Осталось: 22 ч. 36 мин."
+    },
+    {
+      "title": "★【難有り】Fender Mexico/フェンダー メキシコ Mustang/ムスタング 2016年製 エレキギター ソフトケース付 同梱×/160",
+      "price": "19,112 иена(иен) (US$139,14)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/c1188681917",
+      "source": "buyee",
+      "condition": "Повреждения/грязь",
+      "endDate": "16.06.2025 21:28",
+      "timeRemaining": "Осталось: 21 ч. 23 мин."
+    },
+    {
+      "title": "BACCHUS G-PLAYER TRL/M NA-BN エレキギター 中古 N10135562",
+      "price": "33,000 иена(иен) (US$240,24)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/v1188918134",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "17.06.2025 22:59",
+      "timeRemaining": "Осталось: 1 дн. 22 ч. 54 мин."
+    },
+    {
+      "title": "GRECO WILD SCAMPER エレキギター 弦楽器 グレコ 中古 良好 Y10066742",
+      "price": "6,600 иена(иен) (US$48,05)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/k1188674831",
+      "source": "buyee",
+      "condition": "Нет видимых повреждений/грязи",
+      "endDate": "17.06.2025 22:27",
+      "timeRemaining": "Осталось: 1 дн. 22 ч. 23 мин."
+    },
+    {
+      "title": "Tokai Springy Sound ST80 1979 ストラトキャスターモデル トーカイ 楽器 中古 O10036844",
+      "price": "160,380 иена(иен) (US$1 167,57)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/s1188909968",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "17.06.2025 22:59",
+      "timeRemaining": "Осталось: 1 дн. 22 ч. 54 мин."
+    },
+    {
+      "title": "Fernandes LIMITED EDITION フェルナンデス エレキギター フライング 中古 N10131187",
+      "price": "23,760 иена(иен) (US$172,98)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/c1188905700",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "17.06.2025 22:07",
+      "timeRemaining": "Осталось: 1 дн. 22 ч. 2 мин."
+    },
+    {
+      "title": "Tokai ALS94F Love Rock モデル エレキギター レスポールタイプ トーカイ 楽器 中古 良好 Y10097395",
+      "price": "55,440 иена(иен) (US$403,61)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/l1187929053",
+      "source": "buyee",
+      "condition": "Нет видимых повреждений/грязи",
+      "endDate": "17.06.2025 22:49",
+      "timeRemaining": "Осталось: 1 дн. 22 ч. 45 мин."
+    },
+    {
+      "title": "MOMOSE MC2-MV/M 2TS Modern Virtuoso series エレキギター 弦楽器 中古 良好 T10090400",
+      "price": "165,000 иена(иен) (US$1 201,20)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/d1188564229",
+      "source": "buyee",
+      "condition": "Нет видимых повреждений/грязи",
+      "endDate": "16.06.2025 22:44",
+      "timeRemaining": "Осталось: 22 ч. 39 мин."
+    },
+    {
+      "title": "Squier by Fender STRATOCASTER スクワイヤー ストラトキャスター エレキギター 中古 W10063971",
+      "price": "12,826 иена(иен) (US$93,38)",
+      "image": "https://cdn.buyee.jp/images/common/spacer.gif",
+      "url": "https://buyee.jp/item/jdirectitems/auction/c1188362332",
+      "source": "buyee",
+      "condition": "Незначительные повреждения/грязь",
+      "endDate": "17.06.2025 22:13",
+      "timeRemaining": "Осталось: 1 дн. 22 ч. 8 мин."
+    }
+  ],
+  "last_updated": "2025-06-16 00:04:43",
+  "total_count": 20
 }
